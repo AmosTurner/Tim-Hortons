@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!--
+This HTML file defines the structure and layout of the order output page
+which includes an image representation and tabular representation of their order
+Name: Amos Turner
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Output</title>
+    <link rel="stylesheet" type="text/css" th:href="@{style.css}">
+    <script src="test.js"></script>
+</head>
+<body>
+
+<header>
+    <h2>Thanks for your order. Here it is:</h2>
+</header>
+
+<section th:each="p:${panels}" th:none="${p}" th:object="${coffee}" class="coffee" id="wrapper" th:field="coffee">
+    <span th:each="c:${coffees}">
+    <img th:src="@{${c}}" alt="coffee Types"/>
+    </span>
+</section>
+<br>
+<table id="table" hidden>
+    <tr>
+        <th>Coffee Type</th>
+        <th>Amount of Coffees</th>
+        <th>Size</th>
+    </tr>
+    <tr th:each="o:${orders}">
+        <td th:text="${o.coffee}"></td>
+        <td th:text="${o.amount}"></td>
+        <td th:text="${o.size}"></td>
+    </tr>
+</table>
+<br>
+<a href="http://localhost:8080">
+    <button>Order Again</button>
+</a>
+<button onclick="displayTable()">Display table</button>
+
+</body>
+</html>

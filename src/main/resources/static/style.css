@@ -1,0 +1,55 @@
+body {
+    background: #ecdecd;
+}
+
+tr:nth-child(even) {
+    background-color: darkgray;
+}
+
+tr:nth-child(odd) {
+    background-color: darkred;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    color: #400e02;
+    font-family: "TrebuchetMS", Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+section {
+    border: 2px solid #400e02;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#wrapper {
+    width: 421px;
+    margin: auto;
+}
+
+form {
+    width: 300px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+input[type=number] {
+    width: 50px;
+}
+
+section.coffee {
+    background-color: white;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!--
+This HTML file defines the structure and layout of the order page
+which includes a form for the user to order their coffee
+Name: Amos Turner
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Horton's Orders</title>
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
+</head>
+<body>
+
+<header>
+    <img src="../images/logo-en.jpg" alt="logo"><br>
+    <h2>Welcome to Tim Horton's!</h2>
+</header>
+
+<section id="wrapper">
+    <form method="post" action="#" onsubmit="validate()" th:action="@{/addOrder}" th:object="${order}">
+        <input type="number" value="1" min="1" th:field="*{amount}" th:value="1"/>
+        <select th:field="*{size}">
+            <option th:each="s:*{sizes}" th:value="${s}" th:text="${s}"></option>
+        </select><br>
+        <input type="radio" name="order" value="Regular" th:field="*{coffee}"/>
+        <label>Regular</label><br>
+        <input type="radio" name="order" value="Double Double" th:field="*{coffee}"/>
+        <label>Double Double</label><br>
+        <input type="radio" name="order" value="Triple Triple" th:field="*{coffee}"/>
+        <label>Triple Triple</label><br>
+        <input type="radio" name="order" value="Black" th:field="*{coffee}"/>
+        <label>Black</label><br>
+        <input type="radio" name="order" value="Black One Sugar" th:field="*{coffee}"/>
+        <label>Black One Sugar</label><br>
+        <input type="radio" name="order" value="Black Two Sugars" th:field="*{coffee}"/>
+        <label>Black Two Sugars</label><br>
+        <input type="radio" name="order" value="Black Three Sugars" th:field="*{coffee}"/>
+        <label>Black Three Sugars</label><br>
+        <input type="submit" id="submit" onclick="validate()" value="Order Coffee"/><br>
+    </form>
+</section>
+
+</body>
+</html>
